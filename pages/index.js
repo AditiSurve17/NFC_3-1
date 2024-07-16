@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Landing from "../components/Home/Landing";
 import Schedule from "../components/Schedule";
@@ -9,38 +9,42 @@ import Journey from "../components/Home/Journey";
 import Preloader from "../components/Home/Preloader";
 import Venue from "../components/Home/Venue";
 import Sponsor from "../components/Sponsor";
-{/* import Countdown from "../components/Countdown"; */}
+import CountdownTimer from "../components/CountdownTimer";
 import "animate.css";
 
-const index = () => {
+const targetDate = "2024-08-29T09:59:59"; // Replace with your target date
+
+const Index = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
     import("wow.js").then((WOW) => {
       new WOW.default().init();
     });
   }, []);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <div >
-    <Layout>
-      {/* Animation */}
-      <Preloader />
-      <Landing />
-      {/* <Countdown /> */}
-      {/* About */}
-      <Wihts />
-      <Journey />
-      <Domains />
-      <Schedule />
-      <Venue />
-      
-      {/* <Tracks /> */}
-      <Sponsor />
-      {/* <WhySponsor /> */}
-      {/* <Organiser /> */}
-      <FAQS />
-    </Layout>
-      </div>
+    <div>
+      <Layout>
+        {/* Animation */}
+        <Preloader />
+        <Landing />
+        {isMounted && <CountdownTimer targetDate={targetDate} />}
+        {/* About */}
+        <Wihts />
+        <Journey />
+        <Domains />
+        <Schedule />
+        <Venue />
+        <Sponsor />
+        <FAQS />
+      </Layout>
+    </div>
   );
 };
 
-export default index;
+export default Index;
