@@ -1,5 +1,6 @@
 .countContent {
 	width: 100%;
+	background-color: #DAA520;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
