@@ -6,12 +6,13 @@ import FAQS from "../components/FAQS";
 import Domains from "../components/Home/Domains";
 import Wihts from "../components/Home/Wihts";
 import Journey from "../components/Home/Journey";
-import Preloader from "../components/Home/Preloader";
+
 import Venue from "../components/Home/Venue";
 import Sponsor from "../components/Sponsor";
 {/* import Countdown from "../components/Countdown"; */}
  import CountdownTimer from "../components/CountdownTimer"; 
 import "animate.css";
+import Preloader from "../components/Home/Preloader";
 
 const targetDate = "2024-08-29T10:00:00"; // Replace with your target date
 
@@ -27,12 +28,28 @@ const index = () => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+  const [count, setCount] = useState(0)
 
-  return (
+  const [isLoading, setLoading] = useState(true);
+  useEffect(() => {
+    const fakeDataFetch = () =>{
+        setTimeout(()=>{
+          setLoading(false);
+        },4000)
+    }
+    fakeDataFetch();
+  }, [])
+
+  return isLoading? (
+    <Preloader />
+  )
+  :(
+
+
     <div >
     <Layout>
       {/* Animation */}
-      <Preloader />
+      {/* <Preloader /> */}
       <Landing />
       {/* <Countdown /> */}
       {isMounted && <CountdownTimer targetDate={targetDate} />}
