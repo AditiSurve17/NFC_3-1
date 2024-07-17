@@ -5,6 +5,11 @@
   user-select: none;
 }
 
+@font-face {
+  font-family: 'Caribbean';
+  src: url(../public/fonts/Caribbean.ttf);
+}
+
 .home {
   display: flex;
   align-items: center;
@@ -78,6 +83,7 @@
   }
 }
 
+
 .butHolder {
   display: flex;
   justify-content: space-around;
@@ -134,8 +140,7 @@ iframe button {
   top: 50%;
   transform: translate(-25%, -50%);
   z-index: 1;
-  color: rgb(174, 186, 255);
-  font-weight: bold;
+  color: var(--primary-blue);
 }
 
 .Btn:active {
@@ -216,6 +221,73 @@ iframe button {
   }
 }
 
+.hollow{
+  /* background: url('/images/pirates/pngegg (1).png') no-repeat center center;
+  background-size: 1250px; */
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 70px;
+  flex-wrap: wrap;
+  font-size: 70px; /* Adjust size as needed */
+  font-weight: bold;
+  color: #ffde06;
+  padding: 30px;
+  -webkit-text-stroke: 2px #ffde06;
+  /* -webkit-text-stroke: 2px #fff; */
+  font-family: 'Caribbean', sans-serif; 
+
+  text-transform: uppercase; /* Block letters */
+}
+.hollow h1 {
+  margin: 15px; /* Ensures consistent spacing */
+  opacity:1;
+  font-family: 'Caribbean', sans-serif; 
+
+
+}
+
+.rotating-image {
+  width: 150px;
+}
+
+.image-text-group {
+  display: flex;
+  align-items: center;
+}
+.overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+  position: absolute;
+}
+
+@media (max-width: 768px) {
+  .hollow {
+    font-size: 40px; /* Adjust font size for tablets */
+  }
+  .rotating-image {
+    width: 70px; /* Adjust image size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .hollow {
+    font-size: 40px; /* Adjust font size for mobile */
+    flex-direction: column; /* Stack elements vertically on mobile */
+    justify-content: center; /* Center horizontally */
+  }
+  .rotating-image {
+    width: 70px; /* Adjust image size for mobile */
+  }
+  .hollow h1 {
+    margin: 5px; /* Reduce margin for mobile */
+  }
+}
 .cost2 {
   position: absolute;
   top: 40%;
