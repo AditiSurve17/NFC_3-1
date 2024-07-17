@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from '../styles/countdown.module.css'; // Ensure correct path to the CSS file
 
 const CountdownTimer = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({});
@@ -29,24 +30,24 @@ const CountdownTimer = ({ targetDate }) => {
   }, [targetDate]);
 
   return (
-    <div className="countdown-container" style={styles.container}>
+    <div className={styles.countContent}>
       {Object.keys(timeLeft).length > 0 ? (
         <>
-          <div style={styles.timeUnit}>
-            <span style={styles.number}>{timeLeft.days}</span>
-            <span style={styles.label}>Days</span>
+          <div className={styles.countBox}>
+            <span className={styles.countValue}>{timeLeft.days}</span>
+            <span className={styles.countLabel}>Days</span>
           </div>
-          <div style={styles.timeUnit}>
-            <span style={styles.number}>{timeLeft.hours}</span>
-            <span style={styles.label}>Hours</span>
+          <div className={styles.countBox}>
+            <span className={styles.countValue}>{timeLeft.hours}</span>
+            <span className={styles.countLabel}>Hours</span>
           </div>
-          <div style={styles.timeUnit}>
-            <span style={styles.number}>{timeLeft.minutes}</span>
-            <span style={styles.label}>Minutes</span>
+          <div className={styles.countBox}>
+            <span className={styles.countValue}>{timeLeft.minutes}</span>
+            <span className={styles.countLabel}>Minutes</span>
           </div>
-          <div style={styles.timeUnit}>
-            <span style={styles.number}>{timeLeft.seconds}</span>
-            <span style={styles.label}>Seconds</span>
+          <div className={styles.countBox}>
+            <span className={styles.countValue}>{timeLeft.seconds}</span>
+            <span className={styles.countLabel}>Seconds</span>
           </div>
         </>
       ) : (
@@ -54,29 +55,6 @@ const CountdownTimer = ({ targetDate }) => {
       )}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontFamily: "'Pirata One', cursive", // Applying 'Pirata One' font here
-    fontSize: '1.5rem',
-    padding: '20px',
-    color: '#fff',
-  },
-  timeUnit: {
-    margin: '0 10px',
-    textAlign: 'center',
-  },
-  number: {
-    fontSize: '4rem',
-    display: 'block',
-  },
-  label: {
-    fontSize: '1.5rem',
-  },
 };
 
 export default CountdownTimer;
