@@ -64,14 +64,20 @@
 .frm {
   position: absolute;
   bottom: -5%;
-  right: -16%;
+  right: -40%;
+  transform: rotate(-20deg);
 }
 .frm img {
-  width: 70%;
-  animation: rotate 7s infinite;
+  width: 60%;
+  animation: shipMovement 5s ease-in-out infinite;
 }
 
-
+@keyframes shipMovement {
+  0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+  25% { transform: translate(-48%, -15px) rotate(-2deg); }
+  50% { transform: translate(-50%, -30px) rotate(0deg); }
+  75% { transform: translate(-52%, -15px) rotate(2deg); }
+}
 
 @keyframes rotatefull {
   0% {
@@ -112,8 +118,8 @@
 }
 @media only screen and (max-width: 768px) {
   .frm {
-    bottom: -3%;
-    right: -60%;
+    bottom: -10%;
+    right: -100%;
   }
 
   .frm img {

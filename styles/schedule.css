@@ -96,7 +96,7 @@
 .planet img {
   width: 150px;
   height: 150px;
-  animation: rotate 7s infinite;
+  /* animation: rotate 7s infinite;*/
 }
 
 @keyframes rotate {

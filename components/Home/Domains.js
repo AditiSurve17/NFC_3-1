@@ -50,14 +50,14 @@ const Domains = () => {
           <div className="rstar">
             <img
               className="topstar"
-              src="./images/images/darth.png"
+              src="./images/pirates/skull05.png"
               alt="Hack the space Hackathon Star"
             />
           </div>
           <div className="frm about-frm">
             <img
               className="botstar"
-              src="./images/images/star.png"
+              src="./images/pirates/barrel.png"
               alt="Hack the space Hackathon Planet"
             />
           </div>
