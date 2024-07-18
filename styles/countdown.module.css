@@ -1,5 +1,9 @@
 .countContainer{
-margin-top: 50px;
+	margin-top: 30px;
+	background-color: #ffffff;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
 }
 
 .countContent {
@@ -11,6 +15,14 @@ margin-top: 50px;
 	margin: auto;
 	gap: 12px;
 }
+
+.countHeader{
+	display: flex;
+  	justify-content: center;
+	margin: 10px;
+	font-size: 30px;
+}
+
 .countTitle{
 	margin-bottom: 20px;
 	font-size: 50px;
@@ -32,8 +44,7 @@ margin-top: 50px;
 .countValue {
 	font-size: 30px;
 	font-weight: 600;
-	background: url('../public/images/bg.png') no-repeat center center;
-	color: white;
+	background: url('../public/images/bg.png') no-repeat center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -53,8 +64,20 @@ margin-top: 50px;
 	font-weight: 100;
 	letter-spacing: 4px;
 	margin-top: 10px;
+	font-family: 'Pirata One', cursive;
 }
 
+/* For small screen*/
+@media screen and (max-width:550px){
+	.countContent{
+		flex-direction: column;
+		align-items: center;
+		gap: 0px;
+	}
+}
+
+
+/* For large screen*/
 @media screen and (min-width: 550px) {
 	.countContent {
 		gap: 30px;

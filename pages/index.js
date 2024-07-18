@@ -14,7 +14,7 @@ import Sponsor from "../components/Sponsor";
 import "animate.css";
 import Preloader from "../components/Home/Preloader";
 
-const targetDate = "2024-08-29T10:00:00"; // Replace with your target date
+const targetDate = "2024-08-20T23:59:59"; // Replace with your target date
 
 const index = () => {
   const [isMounted, setIsMounted] = useState(false);

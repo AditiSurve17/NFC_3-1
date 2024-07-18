@@ -25,6 +25,7 @@
   font-family: "Poppins", sans-serif;
   /* overflow-x:clip; */
   scroll-behavior: smooth;
+  font-family: 'Pirata One', cursive; /* Default font of text */
 }
 
 :root {
