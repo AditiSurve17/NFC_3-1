@@ -10,7 +10,7 @@ const Preloader = () => {
           clearInterval(interval);
           return 100;
         }
-        return prevProgress + 7;
+        return prevProgress + 8;
       });
     }, 400);
   }, []);
@@ -32,7 +32,7 @@ const Preloader = () => {
 
         @keyframes fadeInScaleUp {
           0% {
-            opacity: 0;
+            opacity: 0.3;
           }
           100% {
             opacity: 1;
@@ -42,14 +42,14 @@ const Preloader = () => {
         .textCon {
           position: relative;
           text-align: center;
-          font-family: 'Caribbean', sans-serif; /* Use 'Caribbean' here */
           width: 900px;
         }
 
         .textCon h1 {
           position: absolute;
           color: #fff;
-          font-family: 'Caribbean', sans-serif;
+          font-family: 'Caribbean';
+          font-weight: 200;
           transform: translate(0, -50%);
           font-size: 8em;
           animation: fadeInScaleUp 2s ease-in-out forwards;
