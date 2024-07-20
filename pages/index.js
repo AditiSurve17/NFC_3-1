@@ -13,6 +13,7 @@ import Sponsor from "../components/Sponsor";
  import CountdownTimer from "../components/CountdownTimer"; 
 import "animate.css";
 import Preloader from "../components/Home/Preloader";
+import ImageSlider from "../components/Home/ImageSlider";
 
 const targetDate = "2024-08-20T23:59:59"; // Replace with your target date
 
@@ -56,6 +57,7 @@ const index = () => {
       {/* About */}
       <Wihts />
       <Journey />
+      <ImageSlider />
       <Domains />
       <Schedule />
       <Venue />
