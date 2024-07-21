@@ -2,7 +2,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: 1;
   height: 2478px;
   width: 100%;
 }
@@ -62,11 +62,15 @@
   text-align: center;
   text-shadow: 0px 0px 20px var(--primary-blue);
   text-transform: uppercase;
+  z-index: 10;
+  position: relative;
 }
 
 .schedule-section h5 {
   text-transform: uppercase;
   text-shadow: 0px 0px 20px var(--primary-blue);
+  z-index: 10;
+  position: relative;
 }
 
 .schedule-section .schedule-container .time-container-left {
@@ -75,10 +79,13 @@
   align-items: center;
   justify-content: flex-start;
   margin: 40px 20px;
+  z-index: 10;
+  position: relative;
 }
 
 .schedule-section .schedule-container .time-container-left .time .time-text {
   text-align: left;
+  
 }
 
 .schedule-section .schedule-container .time-container-right {
@@ -87,6 +94,8 @@
   align-items: center;
   justify-content: flex-start;
   margin: 0 20px;
+  z-index: 10;
+  position: relative;
 }
 
 .schedule-section .schedule-container .time-container-right .time .time-text {
@@ -96,6 +105,8 @@
 .planet img {
   width: 150px;
   height: 150px;
+  z-index: 10;
+  position: relative;
   /* animation: rotate 7s infinite;*/
 }
 

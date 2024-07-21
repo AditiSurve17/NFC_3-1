@@ -78,7 +78,18 @@
   }
   
   /* For small screen */
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 768px) {
+
+	.countContainer {
+		margin-top: 30px;
+		
+		/* padding: 10px; */
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 10; /* Ensuring container is above other elements */
+	  }
+	  
 	.countContent {
 	  flex-direction: column;
 	  align-items: center;
@@ -87,7 +98,7 @@
   }
   
   /* For large screen */
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 768px) {
 	.countContent {
 	  gap: 30px;
 	}
