@@ -1,6 +1,5 @@
 .countContainer {
 	margin-top: 30px;
-	
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -12,7 +11,7 @@
 	width: 100%;
 	background-color: transparent;
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap; /* Allow wrapping for responsiveness */
 	justify-content: center;
 	margin: auto;
 	gap: 12px;
@@ -28,16 +27,8 @@
 	z-index: 20; /* Ensuring text is above other elements */
   }
   
-  .countTitle {
-	margin-bottom: 20px;
-	font-size: 50px;
-	font-family: 'Pirata One', cursive;
-	color: #FFD700;
-	text-shadow: 2px 2px #000;
-  }
-  
   .countBox {
-	width: calc(100% / 4);
+	width: calc(50% - 24px); /* Adjust width for responsive design */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -79,21 +70,23 @@
   
   /* For small screen */
   @media screen and (max-width: 768px) {
-
 	.countContainer {
-		margin-top: 30px;
-		
-		/* padding: 10px; */
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		z-index: 10; /* Ensuring container is above other elements */
-	  }
-	  
-	.countContent {
+	  margin-top: 30px;
+	  /* padding: 10px; */
+	  display: flex;
 	  flex-direction: column;
-	  align-items: center;
+	  position: relative;
+	  z-index: 10; /* Ensuring container is above other elements */
+	}
+	
+	.countContent {
 	  gap: 0px;
+	}
+  
+	.countBox {
+	  width: calc(50% - 12px); /* Adjust width for responsive design */
+	  height: 150px;
+	  max-width: 150px;
 	}
   }
   

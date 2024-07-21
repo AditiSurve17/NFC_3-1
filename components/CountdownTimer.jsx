@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/countdown.module.css'; // Ensure correct path to the CSS file
 
-
-
 const CountdownTimer = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({});
 
@@ -59,7 +57,6 @@ const CountdownTimer = ({ targetDate }) => {
         )}
       </div>
     </div>
-    
   );
 };
 
