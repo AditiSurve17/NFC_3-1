@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #000;
+  }
 `;
 
 const Slider = styled.section`
@@ -56,7 +61,8 @@ const SliderWrapper = styled.div`
   #s2:checked ~ #slide2,
   #s3:checked ~ #slide3,
   #s4:checked ~ #slide4,
-  #s5:checked ~ #slide5 {
+  #s5:checked ~ #slide5,
+  #s6:checked ~ #slide6 {
     box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.8), 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
     transform: translate3d(0%, 0, 0px);
   }
@@ -65,7 +71,8 @@ const SliderWrapper = styled.div`
   #s2:checked ~ #slide3,
   #s3:checked ~ #slide4,
   #s4:checked ~ #slide5,
-  #s5:checked ~ #slide1 {
+  #s5:checked ~ #slide6,
+  #s6:checked ~ #slide1 {
     box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
     transform: translate3d(20%, 0, -100px);
   }
@@ -73,28 +80,41 @@ const SliderWrapper = styled.div`
   #s1:checked ~ #slide3,
   #s2:checked ~ #slide4,
   #s3:checked ~ #slide5,
-  #s4:checked ~ #slide1,
-  #s5:checked ~ #slide2 {
+  #s4:checked ~ #slide6,
+  #s5:checked ~ #slide1,
+  #s6:checked ~ #slide2 {
     box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
     transform: translate3d(40%, 0, -250px);
   }
 
   #s1:checked ~ #slide4,
   #s2:checked ~ #slide5,
-  #s3:checked ~ #slide1,
-  #s4:checked ~ #slide2,
-  #s5:checked ~ #slide3 {
+  #s3:checked ~ #slide6,
+  #s4:checked ~ #slide1,
+  #s5:checked ~ #slide2,
+  #s6:checked ~ #slide3 {
     box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
     transform: translate3d(-40%, 0, -250px);
   }
 
   #s1:checked ~ #slide5,
+  #s2:checked ~ #slide6,
+  #s3:checked ~ #slide1,
+  #s4:checked ~ #slide2,
+  #s5:checked ~ #slide3,
+  #s6:checked ~ #slide4 {
+    box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
+    transform: translate3d(-20%, 0, -100px);
+  }
+
+  #s1:checked ~ #slide6,
   #s2:checked ~ #slide1,
   #s3:checked ~ #slide2,
   #s4:checked ~ #slide3,
-  #s5:checked ~ #slide4 {
-    box-shadow: 0 6px 10px rgba(0,0,0, 0.3), 0 2px 2px rgba(0,0,0, 0.2);
-    transform: translate3d(-20%, 0, -100px);
+  #s5:checked ~ #slide4,
+  #s6:checked ~ #slide5 {
+    box-shadow: 0 1px 4px rgba(0,0,0, 0.4);
+    transform: translate3d(-40%, 0, -250px);
   }
 `;
 
@@ -103,7 +123,7 @@ const App = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide(prevSlide => (prevSlide % 5) + 1);
+      setCurrentSlide(prevSlide => (prevSlide % 6) + 1);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -118,21 +138,25 @@ const App = () => {
           <Input type="radio" name="slider" id="s3" checked={currentSlide === 3} readOnly />
           <Input type="radio" name="slider" id="s4" checked={currentSlide === 4} readOnly />
           <Input type="radio" name="slider" id="s5" checked={currentSlide === 5} readOnly />
+          <Input type="radio" name="slider" id="s6" checked={currentSlide === 6} readOnly />
 
           <Label htmlFor="s1" id="slide1">
-            <img src="https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg" alt="" />
+            <img src="/images/pirates/slider/A.jpg" alt="Slide 1" />
           </Label>
           <Label htmlFor="s2" id="slide2">
-            <img src="https://images6.alphacoders.com/462/thumb-1920-462371.jpg" alt="" />
+            <img src="/images/pirates/slider/B.jpg" alt="Slide 2" />
           </Label>
           <Label htmlFor="s3" id="slide3">
-            <img src="https://wallpaperaccess.com/full/1154341.jpg" alt="" />
+            <img src="/images/pirates/slider/C.jpg" alt="Slide 3" />
           </Label>
           <Label htmlFor="s4" id="slide4">
-            <img src="https://wallpapercave.com/wp/wp2634222.jpg" alt="" />
+            <img src="/images/pirates/slider/D.jpg" alt="Slide 4" />
           </Label>
           <Label htmlFor="s5" id="slide5">
-            <img src="https://images5.alphacoders.com/343/thumb-1920-343645.jpg" alt="" />
+            <img src="/images/pirates/slider/E.jpg" alt="Slide 5" />
+          </Label>
+          <Label htmlFor="s6" id="slide6">
+            <img src="/images/pirates/slider/F.jpg" alt="Slide 6" />
           </Label>
         </Slider>
       </SliderWrapper>
