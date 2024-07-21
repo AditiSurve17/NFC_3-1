@@ -63,7 +63,7 @@ const index = () => {
       <Venue />
       
       {/* <Tracks /> */}
-      <Sponsor />
+      {/* <Sponsor /> */}
       {/* <WhySponsor /> */}
       {/* <Organiser /> */}
       <FAQS />

@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    background: #EEE;
-    user-select: none;
-    font-family: sans-serif;
-  }
+
 `;
 
 const Slider = styled.section`

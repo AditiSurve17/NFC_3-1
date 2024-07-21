@@ -214,7 +214,7 @@ const Landing = () => {
 
           <div className="butHolder">
             <button type="button" className="Btn zinc-bg">
-              <a href="https://need-for-code.devfolio.co/" target="_blank">
+              <a href="" target="_blank">
                 <div className="gradient-mask blue-bg"></div>
                 <span className="text" style={{ color: "white", fontSize: 16 }}>
                   Apply with Devfolio
