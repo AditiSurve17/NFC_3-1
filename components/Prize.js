@@ -2,8 +2,48 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-`;
+  .sponsor-section .sponsor.silver .wrapper .card::after {
+    background: linear-gradient(
+      60deg,
+      rgba(112, 112, 111, 0.4),
+      rgba(125, 125, 122, 0.4),
+      rgba(142, 141, 141, 0.4),
+      rgba(161, 162, 163, 0.4),
+      rgba(179, 182, 181, 0.4),
+      rgba(190, 192, 194, 0.4)
+    );
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
 
+  .sponsor-section .sponsor.gold .wrapper .card::after {
+    background: linear-gradient(
+      60deg,
+      rgba(235, 209, 151, 0.4),
+      rgba(180, 136, 17, 0.4),
+      rgba(162, 121, 13, 0.4),
+      rgba(187, 155, 73, 0.4)
+    );
+    box-shadow: 0 0 10px #bb9b49;
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+
+  .sponsor-section .sponsor.bronze .wrapper .card::after {
+    background: linear-gradient(
+      60deg,
+      rgba(128, 74, 0, 0.3),
+      rgba(137, 94, 26, 0.3),
+      rgba(156, 122, 60, 0.3),
+      rgba(176, 141, 87, 0.3)
+    );
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+`;
 
 const Container = styled.div`
   text-align: center;
@@ -26,7 +66,6 @@ const PricingTitle = styled.h1`
   letter-spacing: 2px;
   overflow: hidden;
   display: inline-block;
-  font-size: 80px;
 
   &::before,
   &::after {
@@ -40,18 +79,6 @@ const PricingTitle = styled.h1`
     overflow: hidden;
     clip: rect(0, 900px, 0, 0);
   }
-
-  ${'' /* &::before {
-    left: 2px;
-    text-shadow: -2px 0 #00f;
-    animation: glitch 2s infinite linear alternate-reverse;
-  }
-
-  &::after {
-    left: -2px;
-    text-shadow: -2px 0 #f00;
-    animation: glitch 1.5s infinite linear alternate-reverse;
-  } */}
 
   &:hover {
     animation: none;
@@ -71,27 +98,6 @@ const PricingTitle = styled.h1`
   &::after {
     text-decoration: underline;
   }
-
-  @keyframes glitch {
-    0% {
-      clip: rect(0, 900px, 0, 0);
-    }
-    20% {
-      clip: rect(40px, 9999px, 56px, 0);
-    }
-    40% {
-      clip: rect(20px, 900px, 50px, 0);
-    }
-    60% {
-      clip: rect(30px, 9999px, 70px, 0);
-    }
-    80% {
-      clip: rect(10px, 900px, 60px, 0);
-    }
-    100% {
-      clip: rect(0, 900px, 0, 0);
-    }
-  }
 `;
 
 const PricingTable = styled.div`
@@ -108,7 +114,6 @@ const PricingTable = styled.div`
 `;
 
 const PricingPlan = styled.div`
-//   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 20px;
   text-align: center;
@@ -119,43 +124,86 @@ const PricingPlan = styled.div`
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   transform: rotateY(0deg);
   flex: 1 1 300px;  /* Flex basis for responsive layout */
+  z-index: 1;
 
-  &:hover {
-    transform: rotateY(0) translateY(-20px);
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.7), 0 0 100px rgba(255, 255, 255, 0.4);
-  }
-
-  &:before,
-  &:after {
+  &.silver:after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
-    background-size: 50px 50px;
-    pointer-events: none;
-    z-index: 1;
-    transition: opacity 0.3s ease;
+    background: linear-gradient(
+      60deg,
+      rgba(112, 112, 111, 0.4),
+      rgba(125, 125, 122, 0.4),
+      rgba(142, 141, 141, 0.4),
+      rgba(161, 162, 163, 0.4),
+      rgba(179, 182, 181, 0.4),
+      rgba(190, 192, 194, 0.4)
+    );
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+    z-index: -1;
   }
 
-  &:hover:before {
-    opacity: 0;
+  &.gold:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      60deg,
+      rgba(235, 209, 151, 0.4),
+      rgba(180, 136, 17, 0.4),
+      rgba(162, 121, 13, 0.4),
+      rgba(187, 155, 73, 0.4)
+    );
+    box-shadow: 0 0 10px #bb9b49;
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+    z-index: -1;
+  }
+
+  &.bronze:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      60deg,
+      rgba(128, 74, 0, 0.3),
+      rgba(137, 94, 26, 0.3),
+      rgba(156, 122, 60, 0.3),
+      rgba(176, 141, 87, 0.3)
+    );
+    -webkit-animation: animatedgradient 3s ease alternate infinite;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: rotateY(0) translateY(-20px);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.7), 0 0 100px rgba(255, 255, 255, 0.4);
   }
 `;
 
 const PlanHeader = styled.div`
   padding: 20px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 20px;
   position: relative;
   z-index: 2;
 `;
 
 const PlanTitle = styled.h2`
   font-size: 28px;
-  margin: 0;
+  margin: 10px 0;
   color: #fff;
   position: relative;
   text-transform: uppercase;
@@ -174,42 +222,10 @@ const PlanPrice = styled.p`
   }
 `;
 
-const PlanFeatures = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px;
-  z-index: 2;
-  position: relative;
-`;
-
-const PlanFeature = styled.li`
-  margin: 10px 0;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 700;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #fff;
-  }
-`;
-
-const PlanButton = styled.a`
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: #000;
-  background: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  z-index: 2;
-  position: relative;
-
-  &:hover {
-    background: #000;
-    color: #fff;
-    transform: scale(1.1);
-  }
+const TrophyImage = styled.img`
+  width: 120px; /* Increased size */
+  margin: 0 auto 20px; /* Center the image and add margin below */
+  background: transparent; /* Ensure background is transparent */
 `;
 
 const Prize = () => {
@@ -217,45 +233,30 @@ const Prize = () => {
     <>
       <GlobalStyle />
       <Container>
-        <PricingTitle section-title>Prizes</PricingTitle>
+        <PricingTitle data-text="Prizes">Prizes</PricingTitle>
         <PricingTable>
-          <PricingPlan>
+          <PricingPlan className="silver">
             <PlanHeader>
-              <PlanTitle>Basic</PlanTitle>
-              <PlanPrice>$9<span>/month</span></PlanPrice>
+              <TrophyImage src="/images/pirates/Trophy/Silver_Trophy.png" alt="Second Prize Trophy" />
+              <PlanTitle>2nd Prize</PlanTitle>
+              <PlanPrice>Rs 20000</PlanPrice>
             </PlanHeader>
-            <PlanFeatures>
-              <PlanFeature>10 Projects</PlanFeature>
-              <PlanFeature>5 GB Storage</PlanFeature>
-              <PlanFeature>Basic Support</PlanFeature>
-            </PlanFeatures>
-            <PlanButton href="#">Choose Plan</PlanButton>
           </PricingPlan>
 
-          <PricingPlan>
+          <PricingPlan className="gold">
             <PlanHeader>
-              <PlanTitle>Pro</PlanTitle>
-              <PlanPrice>$29<span>/month</span></PlanPrice>
+              <TrophyImage src="/images/pirates/Trophy/Golden_Trophy.png" alt="First Prize Trophy" />
+              <PlanTitle>1st Prize</PlanTitle>
+              <PlanPrice>Rs 30000</PlanPrice>
             </PlanHeader>
-            <PlanFeatures>
-              <PlanFeature>50 Projects</PlanFeature>
-              <PlanFeature>50 GB Storage</PlanFeature>
-              <PlanFeature>Priority Support</PlanFeature>
-            </PlanFeatures>
-            <PlanButton href="#">Choose Plan</PlanButton>
           </PricingPlan>
 
-          <PricingPlan>
+          <PricingPlan className="bronze">
             <PlanHeader>
-              <PlanTitle>Enterprise</PlanTitle>
-              <PlanPrice>$99<span>/month</span></PlanPrice>
+              <TrophyImage src="/images/pirates/Trophy/Bronze_Trophy.png" alt="Third Prize Trophy" />
+              <PlanTitle>3rd Prize</PlanTitle>
+              <PlanPrice>Rs 15000</PlanPrice>
             </PlanHeader>
-            <PlanFeatures>
-              <PlanFeature>Unlimited Projects</PlanFeature>
-              <PlanFeature>200 GB Storage</PlanFeature>
-              <PlanFeature>24/7 Support</PlanFeature>
-            </PlanFeatures>
-            <PlanButton href="#">Choose Plan</PlanButton>
           </PricingPlan>
         </PricingTable>
       </Container>
