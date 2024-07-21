@@ -45,7 +45,7 @@ const Label = styled.label`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 400ms ease;
+  transition: transform 400ms ease, box-shadow 400ms ease;
   img {
     position: absolute;
     width: 100%;
@@ -62,7 +62,7 @@ const SliderWrapper = styled.div`
   #s3:checked ~ #slide3,
   #s4:checked ~ #slide4,
   #s5:checked ~ #slide5 {
-    box-shadow: 0 13px 26px rgba(0,0,0, 0.3), 0 12px 6px rgba(0,0,0, 0.2);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.8), 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
     transform: translate3d(0%, 0, 0px);
   }
 

@@ -54,13 +54,13 @@ const Domains = () => {
               alt="Hack the space Hackathon Star"
             />
           </div>
-          <div className="frm about-frm">
+          {/* <div className="frm about-frm">
             <img
               className="botstar"
               src="./images/pirates/barrel.png"
               alt="Hack the space Hackathon Planet"
             />
-          </div>
+          </div> */}
         </div>
       </div>
       {/* <div className="aconst1">
