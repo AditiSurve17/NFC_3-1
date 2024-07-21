@@ -126,6 +126,12 @@ const PricingPlan = styled.div`
   flex: 1 1 300px;  /* Flex basis for responsive layout */
   z-index: 1;
 
+  @media (max-width: 768px) {
+    &.gold {
+      order: -1;
+    }
+  }
+
   &.silver:after {
     content: '';
     position: absolute;
