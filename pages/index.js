@@ -9,12 +9,10 @@ import Journey from "../components/Home/Journey";
 
 import Venue from "../components/Home/Venue";
 import Sponsor from "../components/Sponsor";
-{/* import Countdown from "../components/Countdown"; */}
  import CountdownTimer from "../components/CountdownTimer"; 
 import "animate.css";
 import Preloader from "../components/Home/Preloader";
 import ImageSlider from "../components/ImageSlider";
-// import ImageSlider from "../components/Home/ImageSlider";
 import Prize from "../components/Prize"
 const targetDate = "2024-08-20T23:59:59"; // Replace with your target date
 
